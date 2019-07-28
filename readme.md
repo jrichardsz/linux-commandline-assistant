@@ -5,6 +5,8 @@
 
 An assistant in your daily and repetitive tasks with the linux shell. Created by and for developers!!
 
+Image from: https://analyticstraining.com/difference-between-artificial-intelligence-machine-learning-and-deep-learning/
+
 # Steps
 
 - Clone this repository
@@ -33,7 +35,7 @@ duke
 Response will be
 
 ```
-Hi sr, I am jarvis
+Hi sr, I am duke
 What Can I do for you? Tell me a command...
 ```
 
@@ -59,7 +61,7 @@ Just create new file with .sh extension in **commands** folder. File name will b
 
 # Private Commands
 
-Just create new file with .sh extension in **private_commands** folder. File name will be the command name.
+Just create new file with .sh extension in **private_commands** folder. File name will be the command name. These private commands are scanned before community commands.
 
 # Contribute
 
@@ -81,4 +83,4 @@ Thanks goes to these wonderful people :
 </table>
 
 # License
-Linux Command Line is open-sourced software licensed under the [MIT license](./LICENSE). Frameworks and libraries has it own licensed
+Linux Command Line Assistant is open-sourced software licensed under the [MIT license](./LICENSE). Frameworks and libraries has it own licensed
