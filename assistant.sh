@@ -13,12 +13,12 @@ else
   if [ -f "$command_path" ]; then
     echo "Result of $1 command is:"
     echo ""
-    bash $command_path ${@:2}
+    bash $command_path "${@:2}"
   else
     command_path=$assistant_commands_folder/commands/$1".sh"
     if [ -f "$command_path" ]; then
       echo "Result of $1 command is:"
-      bash $command_path ${@:2}
+      bash $command_path "${@:2}"
     else
         echo ""
         echo "I don't know any command called: $1"
