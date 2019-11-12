@@ -67,6 +67,19 @@ Just create new file with .sh extension in **private_commands** folder. File nam
 
 If you have some awesome command that could help to another developers in the world, just perform a **Pull Request** and I will review it!
 
+# Variables
+
+If you have complex commands which requires variables, just create a file called **variables**. Example:
+
+```
+JAVA_FOR_ECLIPSE=/../apps/jdk123
+MAVEN_HOME=/../apps/apache-maven-3.6.0
+POSTMAN_HOME=/../apps/Postman/
+GIT_AUTHOR="JRichardsz<jrichardsz.java@gmail.com>"
+ECLILPSE_HOME=/../apps/eclipse
+```
+All these variables will be present in any of your commands, so you could use it :D
+
 # Contributors
 
 Thanks goes to these wonderful people :

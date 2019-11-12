@@ -3,6 +3,8 @@ assistant_name=`basename "$0"`
 assistant_real_location=$(realpath "$basedir/$assistant_name")
 assistant_commands_folder=$(dirname "$assistant_real_location");
 
+export $(cat $assistant_commands_folder/variables | xargs)
+
 echo "Hi sr, I am $assistant_name"
 
 if [[ "$1" == ""  ]]; then
@@ -11,13 +13,15 @@ else
 
   command_path=$assistant_commands_folder/private_commands/$1".sh"
   if [ -f "$command_path" ]; then
-    echo "Result of $1 command is:"
+    echo "I will launch your private [$1] command ..."
+    echo ""
     echo ""
     bash $command_path "${@:2}"
   else
     command_path=$assistant_commands_folder/commands/$1".sh"
     if [ -f "$command_path" ]; then
-      echo "Result of $1 command is:"
+      echo "I will launch community [$1] command ..."
+      echo ""
       bash $command_path "${@:2}"
     else
         echo ""
