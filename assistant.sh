@@ -3,7 +3,15 @@ assistant_name=`basename "$0"`
 assistant_real_location=$(realpath "$basedir/$assistant_name")
 assistant_commands_folder=$(dirname "$assistant_real_location");
 
-export $(cat $assistant_commands_folder/variables | xargs)
+export ASSISTANT_COMMANDS_FOLDER=$assistant_commands_folder
+
+if [ -s $assistant_commands_folder/variables ]
+then
+  export $(cat $assistant_commands_folder/variables | xargs)
+else
+  echo "variables are empty sr."
+fi
+
 
 echo "Hi sr, I am $assistant_name"
 

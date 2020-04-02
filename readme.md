@@ -22,6 +22,7 @@ ln -s $(pwd)/assistant.sh /usr/bin/duke
 chmod +x /usr/bin/duke
 ```
 
+- Create [variables](https://github.com/jrichardsz/linux-commandline-assistant#variables) file.
 - That's all folks.
 
 # Invoke Assistant
@@ -63,10 +64,6 @@ Just create new file with .sh extension in **commands** folder. File name will b
 
 Just create new file with .sh extension in **private_commands** folder. File name will be the command name. These private commands are scanned before community commands.
 
-# Contribute
-
-If you have some awesome command that could help to another developers in the world, just perform a **Pull Request** and I will review it!
-
 # Variables
 
 If you have complex commands which requires variables, just create a file called **variables**. Example:
@@ -79,6 +76,10 @@ GIT_AUTHOR="JRichardsz<jrichardsz.java@gmail.com>"
 ECLILPSE_HOME=/../apps/eclipse
 ```
 All these variables will be present in any of your commands, so you could use it :D
+
+# Contribute
+
+If you have some awesome command that could help to another developers in the world, just perform a **Pull Request** and I will review it!
 
 # Contributors
 
