@@ -10,16 +10,16 @@ Image from: https://analyticstraining.com/difference-between-artificial-intellig
 # Steps
 
 - Clone this repository
-- Choose a name for your assistant: jarvis, friday, alfred, etc. For this guide, we will use: **duke**
+- Choose a name for your assistant: jarvis, friday, alfred, etc. For this guide, we will use: **jarvis**
 - Create a symlink, executing the following line inside the cloned folder:
 
 ```
-ln -s $(pwd)/assistant.sh /usr/bin/duke
+ln -s $(pwd)/assistant.sh /usr/bin/jarvis
 ```
 - set execute permissions
 
 ```
-chmod +x /usr/bin/duke
+chmod +x /usr/bin/jarvis
 ```
 
 - Create [variables](https://github.com/jrichardsz/linux-commandline-assistant#variables) file.
@@ -27,23 +27,23 @@ chmod +x /usr/bin/duke
 
 # Invoke Assistant
 
-If your assistant name is duke, you could invoke it, just typing its name in the shell:
+If your assistant name is jarvis, you could invoke it, just typing its name in the shell:
 
 ```
-duke
+jarvis
 
 ```
 Response will be
 
 ```
-Hi sr, I am duke
+Hi sr, I am jarvis
 What Can I do for you? Tell me a command...
 ```
 
 # Example
 
 ```
-duke ip
+jarvis ip
 
 ```
 Response will be
@@ -62,7 +62,9 @@ Just create new file with .sh extension in **commands** folder. File name will b
 
 # Private Commands
 
-Just create new file with .sh extension in **private_commands** folder. File name will be the command name. These private commands are scanned before community commands.
+Just create new file with .sh extension in **private_commands** folder. File name will be the command name. These private commands are scanned before community commands, so is an option to override some community command with a customization just for you.
+
+Also private commands are ignore by default.
 
 # Variables
 
@@ -75,7 +77,7 @@ POSTMAN_HOME=/../apps/Postman/
 GIT_AUTHOR="JRichardsz<jrichardsz.java@gmail.com>"
 ECLILPSE_HOME=/../apps/eclipse
 ```
-All these variables will be present in any of your commands, so you could use it :D
+All these variables will be present in any of your command scripts, so you could use it :D
 
 # Contribute
 

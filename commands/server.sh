@@ -11,13 +11,12 @@ function http {
   fi
 }
 
-function https {
-
+function https {  
   cert="${TMPDIR:-/tmp}"/cert.pem
   script="${TMPDIR:-/tmp}"/$(uuidgen).py
 
-  rm $cert
-  openssl req -new -x509 -keyout $cert -out $cert -days 365 -nodes -subj '/C=GB/ST=London/L=London/O=Global Security/OU=IT Department/CN=example.com'
+  # create your certs
+  # openssl req -new -x509 -keyout $cert -out $cert -days 365 -nodes -subj '/C=GB/ST=London/L=London/O=Global Security/OU=IT Department/CN=example.com'
 
   echo "import BaseHTTPServer, SimpleHTTPServer" >> $script
   echo "import ssl" >> $script
@@ -38,7 +37,7 @@ function https {
 
 case $1 in
 	http)
-		http $2 $3;;
+		http $(shuf -i 2000-65000 -n 1) ;;
 	https)
 		https $2 $3;;
 	*) ;;
