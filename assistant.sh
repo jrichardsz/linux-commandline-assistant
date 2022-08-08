@@ -6,18 +6,18 @@ assistant_home=$(dirname "$assistant_real_location");
 export ASSISTANT_LOCATION=$assistant_real_location
 export ASSISTANT_HOME=$assistant_home
 
+echo "Hi sr, I am $assistant_name"
+
 if [ -s $assistant_home/variables ]
 then
   export $(cat $assistant_home/variables | xargs)
 else
-  echo "variables are empty sr. Don't forget to create it if you want to centralize some variables like folder locations, global users, etc"
+  echo "Sr. don't forget to create it if you want to centralize some variables like folder locations, global users, etc in this file $assistant_real_location/variables"
 fi
 
 
-echo "Hi sr, I am $assistant_name"
-
 if [[ "$1" == ""  ]]; then
-  echo "What Can I do for you? Tell me a command..."
+  echo "You don't enter a command. What Can I do for you?"
 else
 
   command_path=$assistant_home/private_commands/$1".sh"
