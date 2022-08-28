@@ -7,7 +7,7 @@ An assistant in your daily and repetitive tasks with the linux shell. Created by
 
 Image from: https://analyticstraining.com/difference-between-artificial-intelligence-machine-learning-and-deep-learning/
 
-# Steps
+# Configuration
 
 - Clone this repository
 - Choose a name for your assistant: jarvis, friday, alfred, etc. For this guide, we will use: **jarvis**
@@ -64,7 +64,15 @@ Just create new file with .sh extension in **commands** folder. File name will b
 
 Just create new file with .sh extension in **private_commands** folder. File name will be the command name. These private commands are scanned before community commands, so is an option to override some community command with a customization just for you.
 
-Also private commands are ignore by default.
+Also you could save your private commands in a private github repository. Just clone it and use a symlink to create the **private_commands** folder:
+
+```
+git clone https://github.com/foo/my_private_commands.git
+cd my-private-commands
+ln -s $(pwd) /foo/bar/linux-commandline-assistant/private_commands
+```
+
+**Note:** private commands are ignore by default.
 
 # Variables
 

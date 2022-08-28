@@ -1,7 +1,19 @@
 #!/bin/bash
 
-# Very helpfull when you need to write some character like \|{}[]<> and you dont remember hexa value
-# ctrl + shift + u
+#start-readme
+: '
+
+# Description
+
+Very helpfull when you need to write some character like \|{}[]<> and you dont remember hexa value
+
+# Usage
+
+jarvis ascii
+
+then press: ctrl + shift + u and the code
+'
+#end-readme
 
 echo "   2 3 4 5 6 7"
 echo "--------------"

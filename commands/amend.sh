@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#start-readme
+: '
+
+# Description
+
+This command add all the files, commit, get the current branch and push
+
+# Usage
+
+jarvis push "im your commit"
+'
+#end-readme
+
+
 workspace_path=$(pwd)
 echo "workspace_path:$workspace_path"
 override_comment=$1

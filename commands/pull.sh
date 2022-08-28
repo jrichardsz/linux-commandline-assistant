@@ -1,3 +1,20 @@
+#!/bin/bash
+
+#start-readme
+: '
+
+# Description
+
+Just the classic pull
+
+# Usage
+
+jarvis pull
+
+'
+#end-readme
+
+
 workspace_path=$(pwd)
 echo "workspace_path:$workspace_path"
 
