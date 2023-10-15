@@ -3,7 +3,7 @@ assistant_name=`basename "$0"`
 assistant_real_location=$(realpath "$basedir/$assistant_name")
 assistant_home=$(dirname "$assistant_real_location");
 
-export ASSISTANT_LOCATION=$assistant_real_location
+export ASSISTANT_ABSOLUTE_LOCATION=$assistant_real_location
 export ASSISTANT_HOME=$assistant_home
 
 echo "Hi sr, I am $assistant_name"
@@ -12,7 +12,7 @@ if [ -s $assistant_home/variables ]
 then
   export $(cat $assistant_home/variables | xargs)
 else
-  echo "Sr. don't forget to create it if you want to centralize some variables like folder locations, global users, etc in this file $assistant_real_location/variables"
+  echo -e "\n Sr. don't forget to create the $assistant_home/variables if you want to centralize variables like folder locations, git users, etc"
 fi
 
 

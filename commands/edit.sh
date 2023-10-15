@@ -1,0 +1,1 @@
+code "$ASSISTANT_HOME"
