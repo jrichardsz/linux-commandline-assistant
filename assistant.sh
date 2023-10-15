@@ -12,7 +12,8 @@ if [ -s $assistant_home/variables ]
 then
   export $(cat $assistant_home/variables | xargs)
 else
-  echo -e "\n Sr. don't forget to create the $assistant_home/variables if you want to centralize variables like folder locations, git users, etc"
+  echo -e "\nSr. don't forget to create the $assistant_home/variables if you want to centralize variables like folder locations, git users, etc"
+  echo "I will expose these variables before each command execution"
 fi
 
 
