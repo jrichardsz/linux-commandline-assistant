@@ -1,3 +1,7 @@
-temp_profile_path=/tmp/$(uuidgen)
-firefox -CreateProfile "profile $temp_profile_path"
-firefox -profile "$temp_profile_path" -no-remote -new-instance
+# https://wiki.mozilla.org/Firefox/CommandLineOptions
+
+id=$(uuidgen)
+temp_profile_path=/tmp/$id
+echo "temp_profile_path: $temp_profile_path"
+firefox -CreateProfile "jondoe $temp_profile_path"
+firefox -P "jondoe" -no-remote -new-instance

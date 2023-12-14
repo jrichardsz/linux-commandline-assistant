@@ -9,7 +9,7 @@ echo "search ocurrences of: $string_to_search_scaped"
 grep -rnw $file_location -e $string_to_search_scaped | wc -l
 
 
-sed -e "s/$string_to_search_scaped/$string_to_replace_scaped/g" $file_location
+sed -i -e "s/$string_to_search_scaped/$string_to_replace_scaped/g" $file_location
 
 echo "search ocurrences of: $string_to_search"
 grep -rnw $file_location -e $string_to_search | wc -l

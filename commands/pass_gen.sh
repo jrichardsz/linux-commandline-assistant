@@ -21,3 +21,7 @@ openssl rand -base64 $1
 echo 
 
 cat /dev/urandom | tr -dc 'a-zA-Z0-9-_!@#=' | fold -w $1 | grep -i '[!@#$%^&*()_+{}|:<>?=]' | head -n 1
+
+echo
+
+echo "$(uuidgen)""$(uuidgen)"
