@@ -36,7 +36,7 @@ else
         echo ""
         echo "I don't know any command called: $1"
         echo ""
-        echo "Currently I can help you with these private commands:"
+        echo "The commands I know are:"
         echo ""
         for command_sh in $assistant_home/private_commands/*.sh; do
             command_name=`basename "$command_sh"`

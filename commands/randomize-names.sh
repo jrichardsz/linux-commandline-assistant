@@ -1,17 +1,11 @@
 #!/bin/bash
 
 : '''
-# Sanitize file names
+# randomize-names
 
-When files has blanks or special chars in their name but you need simple and clean names
+Usage:
 
-- https://stackoverflow.com/a/14635450/3957754
-
-# Usage
-
-Just pass the parent folder
-
-jarvis sanitize-names /tmp/workspace
+friday randomize-names /tmp/workspace
 
 '''
 
@@ -22,7 +16,7 @@ while read fullfile ; do
    extension="${filename##*.}"
    filename="${filename%.*}"
 
-   new_fname=`echo $filename | sed 's/[^a-zA-Z0-9_-]/_/g'`
+   new_fname=$(uuidgen)
    full_location="$dir/$new_fname.$extension"
    echo "full_location: $full_location"
    mv "$fullfile" "$full_location"
