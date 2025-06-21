@@ -18,13 +18,20 @@ time_end=$2
 source_file=$3
 target_file=$4
 
-start_minutes=$(echo $time_init | cut -d : -f1)
-start_in_Seconds=$((start_minutes*60))
+if [ "$time_init" = "00:00" ]; then
+  start_in_Seconds=0
+else
+    start_minutes=$(echo $time_init | cut -d : -f1)
+    start_in_Seconds=$((start_minutes*60))
+    start_in_Seconds=${start_in_Seconds#0}
 
-start_seconds=$(echo $time_init | cut -d : -f2)
-start_in_Seconds=$((start_in_Seconds+start_seconds))
-start_seconds=${start_seconds#0}
-start_in_Seconds=${start_in_Seconds#0}
+    start_seconds=$(echo $time_init | cut -d : -f2)
+    start_seconds=${start_seconds#0}
+    start_in_Seconds=$((start_in_Seconds+start_seconds))
+    start_seconds=${start_seconds#0}
+    start_in_Seconds=${start_in_Seconds#0}
+fi
+
 echo "start_in_Seconds:$start_in_Seconds"
 
 end_minutes=$(echo $time_end | cut -d : -f1)
@@ -42,4 +49,5 @@ echo "elapsed_time:$elapsed_time"
 
 echo "ffmpeg -ss $start_in_Seconds -t $elapsed_time -i $source_file -acodec copy $target_file"
 
-ffmpeg -ss $start_in_Seconds -t $elapsed_time -i "$source_file" -c copy "$target_file"
+# ffmpeg -ss $start_in_Seconds -t $elapsed_time -i "$source_file" -acodec copy -vcodec copy "$target_file"
+ffmpeg -ss $start_in_Seconds -t $elapsed_time -i "$source_file" -acodec copy -vcodec libx264 "$target_file"
